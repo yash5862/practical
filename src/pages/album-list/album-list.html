@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{ user?.name }}</ion-title>
+        <p secondaryTitle>View Album</p>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6
+                     *ngFor="let album of albums; let i = index;" (click)="goToAlbumDetail(album)">
+            <ion-card no-margin class="albumBox" >
+              <ion-card-content class="albumContent">
+                  {{ album.title }}
+              </ion-card-content>
+            </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

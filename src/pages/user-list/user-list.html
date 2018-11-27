@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title text-center>User Albums</ion-title>
+    </ion-navbar>
+    <ion-searchbar no-padding [formControl]="searchBar"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row *ngIf="filteredUsers && filteredUsers.length > 0">
+            <ion-col col-12 no-padding *ngFor="let user of filteredUsers; let i = index">
+                <ion-card class="userCard" (click)="goToAlbumList(user)">
+                  <ion-card-header class="header">
+                      <h2 class="userName">{{user.name}}</h2>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <h3>{{user.email}}</h3>
+                  </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

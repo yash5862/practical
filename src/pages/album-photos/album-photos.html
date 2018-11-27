@@ -1,0 +1,19 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>{{ album.title }}</ion-title>
+        <p secondaryTitle>View Pictures</p>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-2 *ngFor="let image of photos; let i = index;" (click)="openImage(image)">
+                <img [src]="image.thumbnailUrl">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
